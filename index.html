@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style/style.css">
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <h1>Rock<br>Paper<br>Scissors</h1>
     <div class="score">
       <h2 class="score-title">Score</h2>
-      <p class="score-points">12</p>
+      <p class="score-points" id="score">0</p>
     </div>
   </header>
   <main>
@@ -22,8 +22,13 @@
       <button class="option-btn paper" id="2">Paper</button>
       <button class="option-btn scissors" id="3">Scissors</button>
     </div>
+    <div class="result">
+      <h1 class="hidden" id="win">You win</h1>
+      <h1 class="hidden" id="lose">You lose</h1>
+      <h1 class="hidden" id="draw">Draw</h1>
+      <button class="hidden" id="play-again">Play again</button>
+    </div>
     <button class="rules-button">Rules</button>
-
   </main>
   <script src="./script/main.js"></script>
 </body>

@@ -3,6 +3,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
+  text-transform: uppercase;
 }
 
 body {
@@ -37,7 +38,6 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  text-transform: uppercase;
   line-height: 0.9rem;
 }
 
@@ -73,7 +73,6 @@ header .score-title {
   border-radius: 0.6em;
   background-color: rgba(0, 0, 0, 0);
   color: white;
-  text-transform: uppercase;
   letter-spacing: 0.1rem;
   padding: 0.5em 1.8em;
   margin: 10vh;
@@ -101,5 +100,22 @@ header .score-title {
 
 .scissors {
   border: 15px solid #ec9e0e;
+}
+
+.result h1 {
+  color: white;
+}
+
+.result button {
+  color: #3b4363;
+  background-color: white;
+  border-radius: 0.3em;
+  border: none;
+  padding: 10px 40px;
+}
+
+.hidden {
+  visibility: hidden;
+  position: absolute;
 }
 /*# sourceMappingURL=style.css.map */
