@@ -1,0 +1,87 @@
+@import './variables';
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-between;
+}
+
+* {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: linear-gradient($bg-grad-1, $bg-grad-2);
+    @include flex(column);
+}
+
+header {
+    border: 2px solid $header-outline;
+    border-radius: $radius;
+    padding: 1.5vh;
+    margin: 7vw;
+    @include flex(row);
+    text-transform: uppercase;
+    line-height: 0.9rem;
+    h1 {
+        padding: 0 1.5vh;
+        color: white;
+        font-size: 1.1rem;
+        text-align: left;
+    }
+    .score {
+        text-align: center;
+        background-color: white;
+        border-radius: $radius;
+        padding: 0 1.5em;
+        &-points {
+            color: $dark-text;
+            font-size: 2rem;
+            margin: 0;
+        }
+        &-title {
+            color: $score-text;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+    }
+}
+
+.rules-button {
+    border: 1.5px solid white;
+    border-radius: 2*$radius;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 0.5em 1.8em;
+    margin: 10vh;
+}
+
+.option-btn {
+    background-color: white;
+    border-radius: 50%;
+    color: $dark-text;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 12px;
+  }
+
+.rock {
+    border: 15px solid $rock-grad-1;
+}
+
+.paper {
+    border: 15px solid $paper-grad-1;
+}
+
+.scissors {
+    border: 15px solid $scissors-grad-1;
+}
