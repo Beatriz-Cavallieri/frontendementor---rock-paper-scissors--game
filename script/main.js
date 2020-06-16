@@ -1,59 +1,56 @@
-const buttons = document.querySelectorAll('.option-btn')
+const optionButtons = document.querySelectorAll('.option-btn')
 const scoreNumber = document.getElementById('score')
+//mensagens de resultado
 const win = document.getElementById('win')
 const lose = document.getElementById('lose')
 const draw = document.getElementById('draw')
+//
 const playAgain = document.getElementById('play-again')
+const winLoseDraw = [win, lose, draw]
 // opção 1 = pedra, opção 2 = papel, opção 3 = tesoura
 let houseChoice
 let userChoice
 let score = 0
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        houseChoice = housePlays()
-        console.log(houseChoice)
-        userChoice = parseInt(button.getAttribute('id'))
-        if (userChoice === houseChoice) {
-            //empate
-            console.log('empate')
-            draw.classList.remove('hidden')
-            playAgain.classList.remove('hidden')
-        }
-        else if ((userChoice - houseChoice) === 1 || (userChoice - houseChoice) === -2) {
-            //usuário ganha
-            console.log('você ganhou')
-            score++
-            scoreNumber.innerText = score
-            win.classList.remove('hidden')
-            playAgain.classList.remove('hidden')
-        }
-        else {
-            //usuário perde
-            console.log('você perdeu')
-            score--
-            scoreNumber.innerText = score
-            lose.classList.remove('hidden')
-            playAgain.classList.remove('hidden')
-        }
-        buttons.forEach((button) => {
-            button.classList.add('hidden')
-        })
-    })
+optionButtons.forEach((button) => {
+    button.addEventListener('click', () => play(button))
 })
 
-//botão de jogar novamente
+function play(button) {
+    houseChoice = housePlays()
+    userChoice = parseInt(button.getAttribute('id'))
+    console.log(userChoice)
+    if (userChoice === houseChoice) {
+        //empate
+        showResult(draw)
+    }
+    else if ((userChoice - houseChoice) === 1 || (userChoice - houseChoice) === -2) {
+        //usuário ganha
+        score++
+        showResult(win)
+    }
+    else {
+        //usuário perde
+        console.log('você perdeu')
+        score--
+        showResult(lose)
+    }
+    scoreNumber.innerText = score
+    //esconde as opções
+    optionButtons.forEach((button) => button.classList.add('hidden'))
+}
+
 playAgain.addEventListener('click', e => {
-    win.classList.add('hidden')
-    lose.classList.add('hidden')
-    draw.classList.add('hidden')
-    playAgain.classList.add('hidden')
-    buttons.forEach((button) => {
-        button.classList.remove('hidden')
-    })
+    //esconde os resultados e mostra as opções pra jogar novamente
+    [win, lose, draw, playAgain].forEach((item) => item.classList.add('hidden'))
+    optionButtons.forEach((button) => button.classList.remove('hidden'))
 })
 
 function housePlays() {
-    //retorna número aleatório de 1 a 3
+    //retorna número aleatório de 1 a 3, representando cada opção
     return (Math.floor(Math.random() * 3) + 1)
+}
+
+function showResult(result) {
+    [result, playAgain].forEach((item) => item.classList.remove('hidden'))
 }
