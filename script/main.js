@@ -1,12 +1,8 @@
 const optionButtons = document.querySelectorAll('.option-btn')
 const scoreNumber = document.getElementById('score')
-//mensagens de resultado
-const win = document.getElementById('win')
-const lose = document.getElementById('lose')
-const draw = document.getElementById('draw')
 //
 const playAgain = document.getElementById('play-again')
-const winLoseDraw = [win, lose, draw]
+const result = document.getElementById('result')
 // opção 1 = pedra, opção 2 = papel, opção 3 = tesoura
 let houseChoice
 let userChoice
@@ -22,18 +18,17 @@ function play(button) {
     console.log(userChoice)
     if (userChoice === houseChoice) {
         //empate
-        showResult(draw)
+        showResult("Draw")
     }
     else if ((userChoice - houseChoice) === 1 || (userChoice - houseChoice) === -2) {
         //usuário ganha
         score++
-        showResult(win)
+        showResult("You win")
     }
     else {
         //usuário perde
-        console.log('você perdeu')
         score--
-        showResult(lose)
+        showResult("You lose")
     }
     scoreNumber.innerText = score
     //esconde as opções
@@ -42,7 +37,8 @@ function play(button) {
 
 playAgain.addEventListener('click', e => {
     //esconde os resultados e mostra as opções pra jogar novamente
-    [win, lose, draw, playAgain].forEach((item) => item.classList.add('hidden'))
+    //[win, lose, draw, playAgain].forEach((item) => item.classList.add('hidden'))
+    [result, playAgain].forEach((item) => item.classList.add('hidden'))
     optionButtons.forEach((button) => button.classList.remove('hidden'))
 })
 
@@ -51,6 +47,7 @@ function housePlays() {
     return (Math.floor(Math.random() * 3) + 1)
 }
 
-function showResult(result) {
+function showResult(text) {
     [result, playAgain].forEach((item) => item.classList.remove('hidden'))
+    result.innerText = text
 }

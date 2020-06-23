@@ -1,0 +1,24 @@
+//screen sizes
+$mobile: 375px;
+$desktop: 1366px;
+
+//border
+$radius: 0.3em;
+
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-between;
+}
+
+@mixin circle($background-color, $text-color) {
+    background-color: $background-color;
+    border-radius: 50%;
+    color: $text-color;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 12px;
+}

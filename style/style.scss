@@ -1,9 +1,6 @@
-@import './variables';
-@mixin flex($direction) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: space-between;
-}
+@import './colors';
+@import './reusable';
+@import './header';
 
 * {
     font-family: 'Barlow Semi Condensed', sans-serif;
@@ -62,16 +59,8 @@ header {
 }
 
 .option-btn {
-    background-color: white;
-    border-radius: 50%;
-    color: $dark-text;
-    height: 120px;
-    width: 120px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 5px 12px;
-  }
+    @include circle(white, $dark-text);
+}
 
 .rock {
     border: 15px solid $rock-grad-1;

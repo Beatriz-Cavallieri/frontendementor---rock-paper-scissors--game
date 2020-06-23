@@ -1,3 +1,48 @@
+header {
+  border: 2px solid #606e85;
+  border-radius: 0.3em;
+  padding: 1.5vh;
+  margin: 7vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 0.9rem;
+}
+
+header h1 {
+  padding: 0 1.5vh;
+  color: white;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+header .score {
+  text-align: center;
+  background-color: white;
+  border-radius: 0.3em;
+  padding: 0 1.5em;
+}
+
+header .score-points {
+  color: #3b4363;
+  font-size: 2rem;
+  margin: 0;
+}
+
+header .score-title {
+  color: #2a46c0;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
 * {
   font-family: 'Barlow Semi Condensed', sans-serif;
   -webkit-box-sizing: border-box;
