@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style/style.css">
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 </head>
+
 <body>
   <header>
     <h1>Rock<br>Paper<br>Scissors</h1>
@@ -18,9 +21,11 @@
   </header>
   <main>
     <div class="options">
-      <button class="option-btn rock" id="1">Rock</button>
-      <button class="option-btn paper" id="2">Paper</button>
-      <button class="option-btn scissors" id="3">Scissors</button>
+      <button class="option-btn rock" id="rock"></button>
+      <button class="option-btn paper" id="paper"></button>
+      <button class="option-btn scissors" id="scissors"></button>
+      <div class="played hidden" id="user-played"></div>
+      <div class="played hidden" id="house-played"></div>
     </div>
     <div class="result">
       <h1 class="hidden" id="result"></h1>
@@ -30,4 +35,5 @@
   </main>
   <script src="./script/main.js"></script>
 </body>
+
 </html>

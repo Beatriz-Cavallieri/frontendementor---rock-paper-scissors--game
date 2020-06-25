@@ -43,6 +43,42 @@ header .score-title {
   font-weight: 600;
 }
 
+.option-btn,
+.played {
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 12px;
+  height: 120px;
+  width: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .circle {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.rock {
+  border: 15px solid #dc2e4e;
+  background-image: url("../images/icon-rock.svg");
+}
+
+.paper {
+  border: 15px solid #4865f4;
+  background-image: url("../images/icon-paper.svg");
+}
+
+.scissors {
+  border: 15px solid #ec9e0e;
+  background-image: url("../images/icon-scissors.svg");
+}
+
 * {
   font-family: 'Barlow Semi Condensed', sans-serif;
   -webkit-box-sizing: border-box;
@@ -54,6 +90,8 @@ header .score-title {
 body {
   margin: 0;
   height: 100vh;
+  width: 100vw;
+  padding: 7vh, 7vw;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#1f3756), to(#141539));
   background-image: linear-gradient(#1f3756, #141539);
   display: -webkit-box;
@@ -68,51 +106,6 @@ body {
           justify-content: space-between;
 }
 
-header {
-  border: 2px solid #606e85;
-  border-radius: 0.3em;
-  padding: 1.5vh;
-  margin: 7vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  line-height: 0.9rem;
-}
-
-header h1 {
-  padding: 0 1.5vh;
-  color: white;
-  font-size: 1.1rem;
-  text-align: left;
-}
-
-header .score {
-  text-align: center;
-  background-color: white;
-  border-radius: 0.3em;
-  padding: 0 1.5em;
-}
-
-header .score-points {
-  color: #3b4363;
-  font-size: 2rem;
-  margin: 0;
-}
-
-header .score-title {
-  color: #2a46c0;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-
 .rules-button {
   border: 1.5px solid white;
   border-radius: 0.6em;
@@ -121,30 +114,6 @@ header .score-title {
   letter-spacing: 0.1rem;
   padding: 0.5em 1.8em;
   margin: 10vh;
-}
-
-.option-btn {
-  background-color: white;
-  border-radius: 50%;
-  color: #3b4363;
-  height: 120px;
-  width: 120px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 5px 12px;
-}
-
-.rock {
-  border: 15px solid #dc2e4e;
-}
-
-.paper {
-  border: 15px solid #4865f4;
-}
-
-.scissors {
-  border: 15px solid #ec9e0e;
 }
 
 .result h1 {

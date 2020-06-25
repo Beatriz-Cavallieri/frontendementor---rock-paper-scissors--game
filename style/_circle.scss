@@ -1,0 +1,38 @@
+@mixin optionStyle($color, $url) {
+    border: 15px solid $color;
+    background-image: url($url); 
+}
+
+.option-btn,
+.played {
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 12px;
+    height: 120px;
+    width: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+    .circle {
+        height: 120px;
+        width: 120px;
+    }
+}
+
+.rock {
+    @include optionStyle($rock-grad-1, '../images/icon-rock.svg');
+}
+
+.paper {
+    @include optionStyle($paper-grad-1, '../images/icon-paper.svg');
+}
+
+.scissors {
+    @include optionStyle($scissors-grad-1, '../images/icon-scissors.svg');
+}
+
