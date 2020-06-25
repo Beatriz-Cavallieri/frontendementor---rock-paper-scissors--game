@@ -1,0 +1,20 @@
+@import './colors';
+@import './circle';
+
+.rules-btn {
+    border: 1.5px solid white;
+    border-radius: 2*$radius;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    letter-spacing: 0.1rem;
+    padding: 8px 25px;
+    margin: 10vh;
+}
+
+.result button {
+    color: $dark-text;
+    background-color: white;
+    border-radius: $radius;
+    border: none;
+    padding: 10px 40px;
+}

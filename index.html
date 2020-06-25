@@ -8,31 +8,41 @@
     rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/modal.css">
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 </head>
 
 <body>
-  <header>
-    <h1>Rock<br>Paper<br>Scissors</h1>
-    <div class="score">
-      <h2 class="score-title">Score</h2>
-      <p class="score-points" id="score">0</p>
+  <div class="container">
+    <header>
+      <h1>Rock<br>Paper<br>Scissors</h1>
+      <div class="score">
+        <h2 class="score-title">Score</h2>
+        <p class="score-points" id="score">0</p>
+      </div>
+    </header>
+    <main>
+      <div class="options">
+        <button class="option-btn rock" id="rock"></button>
+        <button class="option-btn paper" id="paper"></button>
+        <button class="option-btn scissors" id="scissors"></button>
+        <div class="played hidden" id="user-played"></div>
+        <div class="played hidden" id="house-played"></div>
+      </div>
+      <div class="result">
+        <h1 class="hidden" id="result"></h1>
+        <button class="hidden" id="play-again">Play again</button>
+      </div>
+      <button class="rules-btn" id="rules-btn">Rules</button>
+    </main>
+
+  </div>
+  <div id="modal" class="hidden">
+    <div class="modal-content">
+      <h1>RULES</h1>
+      <button id="close-btn"></button>
     </div>
-  </header>
-  <main>
-    <div class="options">
-      <button class="option-btn rock" id="rock"></button>
-      <button class="option-btn paper" id="paper"></button>
-      <button class="option-btn scissors" id="scissors"></button>
-      <div class="played hidden" id="user-played"></div>
-      <div class="played hidden" id="house-played"></div>
-    </div>
-    <div class="result">
-      <h1 class="hidden" id="result"></h1>
-      <button class="hidden" id="play-again">Play again</button>
-    </div>
-    <button class="rules-button">Rules</button>
-  </main>
+  </div>
   <script src="./script/main.js"></script>
 </body>
 

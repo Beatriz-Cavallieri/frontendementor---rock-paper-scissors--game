@@ -13,10 +13,17 @@ let resultMessages = ["Draw", "You win", "You lose"]
 //
 let houseChoice = ""
 let userChoice = ""
+//
+const rulesButton = document.querySelector('.rules-btn')
+const modalView = document.getElementById('modal')
+const closeModal = document.getElementById('close-btn')
 
 optionButtons.forEach((button) => {
     button.addEventListener('click', () => play(button))
 })
+
+rulesButton.addEventListener('click', (e) => modalView.classList.remove('hidden'))
+closeModal.addEventListener('click', (e) => modalView.classList.add('hidden'))
 
 function play(button) {
     userChoice = button.getAttribute('id')
@@ -32,6 +39,8 @@ function play(button) {
 playAgain.addEventListener('click', e => {
     //esconde os resultados e mostra as opções pra jogar novamente
     [result, playAgain, renderUserPlayed, renderHousePlayed].forEach((item) => item.classList.add('hidden'))
+    renderUserPlayed.classList.remove(userChoice)
+    renderHousePlayed.classList.remove(houseChoice)
     optionButtons.forEach(button => button.classList.remove('hidden'))
 })
 

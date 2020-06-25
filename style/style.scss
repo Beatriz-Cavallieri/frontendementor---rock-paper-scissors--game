@@ -2,45 +2,39 @@
 @import './reusable';
 @import './header';
 @import './circle';
+@import './buttons';
 
 * {
     font-family: 'Barlow Semi Condensed', sans-serif;
     box-sizing: border-box;
-    text-align: center;
     text-transform: uppercase;
+    text-align: center;
 }
 
 body {
-    margin: 0;
-    height: 100vh;
+    margin: 0 auto;
+    // height: 100vh;
     width: 100vw;
-    padding: 7vh, 7vw;
+    height: 100vh;
     background-image: linear-gradient($bg-grad-1, $bg-grad-2);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
     @include flex(column);
 }
 
-.rules-button {
-    border: 1.5px solid white;
-    border-radius: 2*$radius;
-    background-color: rgba(0, 0, 0, 0);
+.result h1 {
     color: white;
-    letter-spacing: 0.1rem;
-    padding: 0.5em 1.8em;
-    margin: 10vh;
 }
 
-.result {
-    h1 {
-        color: white;
-    }
-    button {
-        color: $dark-text;
-        background-color: white;
-        border-radius: $radius;
-        border: none;
-        padding: 10px 40px;
-    }
-}
+// .options {
+//     background-image: url('../images/bg-triangle.svg');
+//     background-repeat: no-repeat;
+//     background-position: center;
+
+// }
 
 .hidden {
     visibility: hidden;
